@@ -1,10 +1,18 @@
 package aufgabe_1;
 
 public class Result {
-	private int[] result = new int[11];
+	private int[] result;
+	private int counter = 0;
+	public Result(int l) {
+		result = new int[l];
+		counter++;
+		
+	}
 	public synchronized void receiveResult(int res, int index) {
 		result[index] = res;
-		notify();
+		if(counter == result.length) {
+			notify();
+		}
 	}
 	public synchronized int[] getResult() throws InterruptedException   {
 		wait();

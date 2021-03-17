@@ -9,8 +9,8 @@ public class Dispatcher {
 		}
 	}
 	public static int[] excecute(F f, int n) throws InterruptedException {
-		Result result = new Result();
-		for(int i = 0; i <= n; i++) {
+		Result result = new Result(n);
+		for(int i = 0; i < n; i++) {
 			ThreadClass t = new ThreadClass(result, i,f);
 			t.start();
 		}
