@@ -3,7 +3,7 @@ package aufgabe_1;
 public class Dispatcher {
 
 	public static void main(String[] args) throws InterruptedException {
-		int[] x =  excecute(new Function(), 10);
+		int[] x =  excecute(new Function(), 20);
 		for(int i = 0; i < x.length; i++) {
 			System.out.println(x[i]);
 		}

@@ -10,12 +10,9 @@ public class ThreadClass extends Thread {
 		f = function;
 	}
 	public void run() {
-		try {
-			Thread.sleep(1000);	
-			r.receiveResult(f.f(i), i);
-		} catch (InterruptedException e) {
 
-		}
+			r.receiveResult(f.f(i), i);
+
 	
 	}
 }
