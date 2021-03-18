@@ -4,12 +4,13 @@ public class Result {
 	private int[] result;
 	public Result(int l) {
 		result = new int[l];
-		//counter++;W
+
 		
 	}
 	public synchronized void receiveResult(int res, int index) {
 		result[index] = res;
-			notify();
+		notify();
+	
 	}
 	public synchronized int[] getResult() throws InterruptedException   {
 		wait();
