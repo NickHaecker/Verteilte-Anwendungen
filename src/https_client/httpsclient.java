@@ -92,17 +92,21 @@ public class httpsclient {
 		
 		boolean status = false;
 		String data = "";
-		
+		boolean test = true;
 		String response = reader.readLine();
-		//while(response != null) {		
-		for(int i = 0; i < 1000; i++) {	
+		while(test == true) {		
 			if(response.equals("<!DOCTYPE html>")) {
 				status = true;
 			}
 			if(status == true) {
 				data = data + " " + response + "\n";
 			}
+			
 			response = reader.readLine();
+			if(response.equals("</body>")) {
+				test = false;
+				data = data + " " + "</body>" + "\n";
+			}
 		}
 		
 		socket.close();
